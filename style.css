@@ -1,0 +1,106 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: #05060A;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+
+canvas {
+  position: fixed;
+  top: 0; left: 0;
+  display: block;
+}
+
+.ui {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  pointer-events: none;
+  animation: fadeInUp 2.5s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+h1 {
+  font-size: clamp(120px, 18vw, 220px);
+  margin: 0;
+  color: #FFD700;
+  text-shadow: 
+    0 0 40px #FFD700,
+    0 0 80px #FFB700,
+    0 0 120px #FF8C00;
+  animation: pulseGlow 3s infinite alternate;
+}
+
+@keyframes pulseGlow {
+  from { 
+    text-shadow: 
+      0 0 30px #FFD700,
+      0 0 60px #FFB700,
+      0 0 90px #FF8C00;
+  }
+  to { 
+    text-shadow: 
+      0 0 60px #FFD700,
+      0 0 120px #FFB700,
+      0 0 180px #FF4500;
+  }
+}
+
+p {
+  font-size: clamp(28px, 6vw, 48px);
+  margin: 15px 0 40px;
+  font-weight: 400;
+  animation: fadeIn 3s ease-out 0.8s forwards;
+  opacity: 0;
+}
+
+span {
+  font-size: clamp(18px, 3vw, 24px);
+  opacity: 0.8;
+  animation: fadeIn 3s ease-out 1.2s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.sound {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-size: 14px;
+  pointer-events: all;
+  background: rgba(0,0,0,0.4);
+  padding: 10px 15px;
+  border-radius: 30px;
+  backdrop-filter: blur(4px);
+}
+
+.sound input[type="range"] {
+  width: 140px;
+  vertical-align: middle;
+}
+
+/* Optional cursor hint */
+body { cursor: pointer; }
